@@ -37,7 +37,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         contentValues.put(COL_2,name);
         contentValues.put(COL_3,surname);
-        contentValues.put(COL_2,marks);
+        contentValues.put(COL_4,marks);
+
+        long result = sqLiteDatabase.insert(TABLE_NAME ,null , contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
 
     }
 }

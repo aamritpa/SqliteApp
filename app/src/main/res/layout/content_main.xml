@@ -9,34 +9,34 @@
     tools:showIn="@layout/activity_main">
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/editText_name"
         android:layout_width="111dp"
         android:layout_height="43dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="57dp" />
+        tools:layout_editor_absoluteY="203dp" />
 
     <EditText
-        android:id="@+id/editText13"
+        android:id="@+id/editText_surname"
         android:layout_width="111dp"
         android:layout_height="43dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Surname"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="100dp" />
+        tools:layout_editor_absoluteY="246dp" />
 
     <EditText
-        android:id="@+id/editText14"
+        android:id="@+id/editText_Marks"
         android:layout_width="111dp"
         android:layout_height="43dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Marks"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="143dp" />
+        tools:layout_editor_absoluteY="289dp" />
 
     <EditText
         android:id="@+id/editText16"
@@ -46,7 +46,7 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="57dp" />
+        tools:layout_editor_absoluteY="203dp" />
 
     <EditText
         android:id="@+id/editText17"
@@ -56,7 +56,7 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="100dp" />
+        tools:layout_editor_absoluteY="246dp" />
 
     <EditText
         android:id="@+id/editText18"
@@ -66,13 +66,13 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="143dp" />
+        tools:layout_editor_absoluteY="289dp" />
 
     <Button
         android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Data"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="246dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="372dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
