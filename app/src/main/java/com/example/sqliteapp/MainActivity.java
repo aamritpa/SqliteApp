@@ -1,5 +1,7 @@
 package com.example.sqliteapp;
 
+import android.app.AlertDialog;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editName,editSurname,editMarks;
     Button btnAddData;
+    Button btnviewAll;
+    Button btnviewUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         editSurname =(EditText)findViewById(R.id.editText_surname);
         editMarks =(EditText)findViewById(R.id.editText_Marks);
         btnAddData =(Button)findViewById(R.id.button_add);
-
+        btnviewAll = (Button)findViewById(R.id.button_viewAll);
+        AddData();
+        viewAll();
     }
 
     public void AddData() {
@@ -50,7 +56,41 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
+    public void viewAll() {
+        btnviewAll.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick (View v) {
+                        Cursor res=  myDb.getAllData();
+                        if(res.getCount() ==0) {
+                            // show message
+                            showMessage("Error", "Nothing found");
+                            return;
+                        }
+                        StringBuffer buffer = new StringBuffer() ;
+                        while (res.moveToNext()) {
+                            buffer.append("Id :"+ res.getString(0)+"\n" );
+                            buffer.append("Id :"+ res.getString(1)+"\n" );
+                            buffer.append("Id :"+ res.getString(2)+"\n" );
+                            buffer.append("Id :"+ res.getString(3)+"\n\n" );
+                        }
 
+                        //Show all Data
+                        showMessage("Data", buffer.toString());
+                    }
+                }
+        );
+    }
+
+
+        public void showMessage(String title, String Message){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(true);
+            builder.setTitle(title);
+            builder.setMessage(Message);
+            builder.show();
+
+        }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
